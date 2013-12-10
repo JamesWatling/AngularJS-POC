@@ -1,21 +1,31 @@
 <html ng-app="Watchlist" >
-<head>
-  <title>AngularJS Watchlist</title>
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
-  <script src="app.js"></script>
-</head>
+
+  <head>
+    <title>AngularJS Watchlist</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+
   <body ng-controller="WatchlistController">
-    <br>
-    <h3>Sample Data</h3>
-    <br>
+
+    <div class='col-md-2'>
+      <h3>Sample Data</h3>
+      <pre>Click adds to watchlist</pre>
+    </div>
+
+    <div class="clearfix"></div>
     <div ng-repeat = 'image in images' class='col-md-2'>
       <img class="img-thumbnail" alt="140x140" style="width: 140px; height: 140px;" src="images/{{image}}" ng-click='addToWatchlist(image)'>
     </div>
-    <br>
-    <br>
-    <br>
-    <h3 class='col-md-12'>Watchlist</h3>
+
+    <div class="clearfix"></div>
+    <div class='col-md-2'>
+      <h3>Watchlist</h3>
+      <pre>Click removes from watchlist</pre>
+    </div>
+
+    <div class="clearfix"></div>
     <div ng-repeat = 'images in watchlist' class='col-md-2'>
       <img class="img-thumbnail" alt="140x140" style="width: 140px; height: 140px;" src="images/{{images}}" ng-click='removeFromWatchlist(images)'>
     </div>
